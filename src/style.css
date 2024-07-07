@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Prenav{
+    background-color: #e6007e;
+    width: 100%;
+    height: 80px;
+    color: white;
+    justify-content: space-evenly;
+    display: flex;
+    height: 50px;
+    padding-top: 15px;
+}
+
+.orders{
+    width: 25%;
+}
+
+marquee{
+    width: 42%;
+}
+
+
+
+.logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar li{
+    list-style-type: none;
+}
