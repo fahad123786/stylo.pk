@@ -43,3 +43,8 @@ marquee{
 .navbar li{
     list-style-type: none;
 }
+
+.link{
+    text-decoration: none!important;
+    color: black;
+}

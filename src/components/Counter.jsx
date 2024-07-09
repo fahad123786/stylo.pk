@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const Counter = () => {
+    const navigate = useNavigate();
     const [counter, setCounter] = useState(1)
     const [show, setshow] = useState(true);
     const add = () => {
         if (counter < 3)
             setCounter(counter + 1);
         else {
+            navigate("/");
            toast.warning("You cannot click more than 3 ")
         }
     }
