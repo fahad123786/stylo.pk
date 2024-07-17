@@ -9,10 +9,7 @@ const Counter = () => {
     const add = () => {
         if (counter < 3)
             setCounter(counter + 1);
-        else {
-            navigate("/");
-           toast.warning("You cannot click more than 3 ")
-        }
+        
     }
 
     const minus = () => {
@@ -23,17 +20,15 @@ const Counter = () => {
             toast.warning("You cannot click less than 1")
         }
     }
-    const updateValue=()=>{
-        setshow(!show);
-    }
+    
     return (
         <div style={{ fontSize: "30px", textAlign: "center" }}>
-            {show ?<h1> Hello India won by cheating</h1> : <h1>South Africa is like Pakistan</h1>}
-            <button onClick={updateValue}> Change update</button>
-           {counter ===3 ? <h1> Your Account limit is full</h1> : null}  
-           <button className='minus' onClick={minus}>-</button>
+            
+            
+            
+           <button className='btn btn-danger' onClick={minus}>-</button>
             {counter}
-            <button className='minus' onClick={add}>+</button>
+            <button className='btn btn-primary' onClick={add}>+</button>
         </div>
     )
 }
