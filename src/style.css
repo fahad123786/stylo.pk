@@ -49,6 +49,28 @@ marquee{
     color: black;
 }
 
+.homepage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.imagehome{
+    display: flex;
+    margin-top: 1rem;
+    width: auto;
+
+}
+
+.imagehome2{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin-top: 3rem;
+    
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
     width: 45px;
