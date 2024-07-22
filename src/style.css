@@ -16,11 +16,11 @@
 }
 
 .orders{
-    width: 25%;
+    width: 23%;
 }
 
 marquee{
-    width: 42%;
+    width: 40%;
 }
 
 
@@ -33,11 +33,13 @@ marquee{
 
 .navbar{
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 20.5px;
     font-weight: bold;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .navbar li{
@@ -58,9 +60,11 @@ marquee{
 
 .imagehome{
     display: flex;
-    margin-top: 1rem;
-    width: auto;
-
+    margin-top: 2rem;
+    height: 350px;
+    width: 500px;
+    
+    
 }
 
 .imagehome2{

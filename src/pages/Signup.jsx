@@ -52,21 +52,21 @@ const Signup = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className='d-flex justify-content-center flex-column align-items-center'>
+            <div className='d-flex justify-content-center flex-column align-items-center' style ={{fontSize:"18px"}}>
                 <label>Name</label>
-                <input type='text' name='name' value={name} onChange={onChange} />
+                <input type='text' name='name' value={name} onChange={onChange} required />
                 
                 <label>Email</label>
-                <input type='text' name='email' value={email} onChange={onChange} />
+                <input type='text' name='email' value={email} onChange={onChange} required/>
                 
                 <label>Phone</label>
-                <input type='number' name='phone' value={phone} onChange={onChange} />
+                <input type='number' name='phone' value={phone} onChange={onChange} required/>
                 
                 <label>Country</label>
                 <Select 
                     options={options} 
                     value={options.find(option => option.label === country)} 
-                    onChange={handleSelectChange} 
+                    onChange={handleSelectChange} required 
                 />
                 
                 <label>Password</label>
@@ -76,10 +76,10 @@ const Signup = () => {
                         name='password' 
                         value={password} 
                         onChange={onChange} 
-                        style={{ marginRight: '10px' }}
+                        style={{ marginRight: '10px' }} required
                     />
                     <span onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        {showPassword ? <FaEye /> : <FaEyeSlash /> }
                     </span>
                 </div>
                 
@@ -90,10 +90,10 @@ const Signup = () => {
                         name='confirmPassword' 
                         value={confirmPassword} 
                         onChange={onChange} 
-                        style={{ marginRight: '10px' }}
+                        style={{ marginRight: '10px' }} required
                     />
                     <span onClick={toggleConfirmPasswordVisibility} style={{ cursor: 'pointer' }}>
-                        {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                        {showConfirmPassword ? <FaEye /> : <FaEyeSlash /> }
                     </span>
                 </div>
                 

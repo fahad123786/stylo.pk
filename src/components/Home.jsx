@@ -9,7 +9,7 @@ const Home = () => {
       <h2 className='homepage'>Shop By Discount</h2>
 
       <div className="imagehome"><img src ='https://stylo.pk/cdn/shop/files/01_84b23f8f-81b3-430b-8074-8bf1dd4bec2c_720x.jpg?v=1714975573'/>
-      {/* <img src ='https://stylo.pk/cdn/shop/files/Free-Shipping_720x.jpg?v=1720444355'/> */}
+       <img src ='https://stylo.pk/cdn/shop/files/Free-Shipping_720x.jpg?v=1720444355'/> 
       </div>
 
       <div className="imagehome2">
