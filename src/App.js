@@ -1,7 +1,7 @@
 import "./style.css"
 
 import Swiper from 'swiper';
-// import Swiper styles
+
 import 'swiper/css';
 import Carousel from "./components/Carousel";
 import Counter from "./components/Counter";

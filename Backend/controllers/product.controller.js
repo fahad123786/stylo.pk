@@ -32,13 +32,12 @@ exports.index = async (req,res)=>{
 exports.get = async (req,res)=>{
     try{
         const {id} = req.params;
-        const query={};
 
-        const products = await Product.findOne({_id: id})
+        const product = await Product.findOne({_id:id})
         if(!product){
             return res.json({status:404,success:false,message:`Couldn't find product`})
         }
-        res.json({status:200,message:"Product fetched successfully", product})
+        res.json({status:200,message:"Product fetched successfully",product})
 
 }
     catch(err){

@@ -7,8 +7,10 @@ const EidCollection = () => {
   const [loader, setLoader] = useState(false);
   const fetchData = async () => {
     setLoader(true)
-    const response = await axios.get("https://fakestoreapi.com/products");
-    setProducts(response.data);
+    // const response = await axios.get("https://fakestoreapi.com/products");
+    const response = await axios.get("http://localhost:8082/api/admin/product?category=eidcollection");
+    setProducts(response.data.products);
+    console.log(response)
     setLoader(false);
   };
 
@@ -20,22 +22,24 @@ const EidCollection = () => {
     <>
       {
         loader ? <Loader /> : (<div className='d-flex flex-wrap justify-content-evenly gap-4'>
-          {products.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <div className="card" style={{ width: "25rem" }}>
-                <img src={product.image} className="card-img-top" style={{ height: "100px", width: "100px" }} alt={product.title} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">{product.description.slice(0, 25) + "..."}</p>
+          {
+            products.map((product) => {
+              return (
+                <Link to={`/product/${product._id}`}>
+                  <div class="card" style={{ width: "18rem" }}>
+                  <img src={product.thumbnail} class="card-img-top" style={{ height: "180px", width: "200px", marginLeft: '2.6rem' }} alt={product.title} />
+                  <div class="card-body">
+                  <h5 class="card-title">{product.title}</h5>
+                  <p class="card-text">{product.description.slice(0, 25) + "..."}</p>
                   <button className="btn btn-primary">${product.price}</button>
-                  <p>Rating: {product.rating.rate}</p>
-                  <p>Item sold: {product.rating.count}</p>
-                </div>
               </div>
-            </Link>
-          ))}
+            </div>
+        </Link>
+        )
+      })
+    }
         </div>)
-      }
+        }
     </>
 
   );

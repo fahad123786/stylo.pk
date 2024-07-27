@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import Counter from '../components/Counter';
 import Loader from '../components/Loader';
 
@@ -10,20 +10,15 @@ const ProductDescription = () => {
   const [loader, setLoader] = useState(false);
 
   const fetchProduct = async () => {
-    setLoader(true);
-    try {
-      const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-      setProduct(response.data);
-    } catch (error) {
-      console.error("Error fetching the product:", error);
-    } finally {
-      setLoader(false);
-    }
-  };
+    setLoader(true)
+    const response = await axios.get(`http://localhost:8082/api/admin/product/${id}`)
+    setProduct(response.data.product)
+    setLoader(false)
+  }
 
   useEffect(() => {
     fetchProduct();
-  }, [id]);
+  }, [])
 
   return (
     loader ? (
@@ -33,7 +28,7 @@ const ProductDescription = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <img src={product?.image} alt={product?.title} width="300px" height="300px" />
+              <img src={product?.thumbnail} alt={product?.title} width="300px" height="300px" />
             </div>
             <div className="col-lg-6">
               <h2>{product?.title}</h2>
