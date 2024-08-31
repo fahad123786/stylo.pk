@@ -1,10 +1,6 @@
 import "./style.css"
 
-import Swiper from 'swiper';
-
 import 'swiper/css';
-import Carousel from "./components/Carousel";
-import Counter from "./components/Counter";
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from "react-router-dom";
@@ -21,7 +17,7 @@ import Fragnances from "./pages/Fragnances";
 import 'bootstrap/dist/css/bootstrap.css';
 import ProductDescription from "./pages/ProductDescription";
 import Signup from "./pages/Signup";
-
+import Login from "./pages/Login";
 
 
 
@@ -41,6 +37,9 @@ function App() {
         <Route path="/fragnances" element={<Fragnances />} />
         <Route path= "/product/:id" element={<ProductDescription/>}/>
         <Route path ="/signup" element={<Signup/>}/>
+        <Route path ="/login" element={<Login/>}/>
+
+       
       </Routes>
       <ToastContainer
         position="top-right"

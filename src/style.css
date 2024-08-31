@@ -16,13 +16,99 @@
 }
 
 .orders{
-    width: 23%;
+    width: 28%;
+    
 }
-
 marquee{
     width: 40%;
 }
 
+
+
+/* For devices with a width of 769px and above */
+@media (min-width: 769px) and (max-width:1170px) {
+    .Prenav {
+        justify-content: space-evenly;
+        padding: 10px 20px;
+    }
+
+    .orders{
+        width: 25%;
+        font-size: 14.5px;
+    } 
+
+    .contact {
+        width: 25%;
+        font-size: 14.5px;
+        margin-top: -0.2rem;    
+
+    }
+
+    marquee {
+        width: 35%;
+        font-size: 14px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .Prenav {
+        flex-direction: column;
+        height: auto;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .orders{
+        width: 100%;
+        margin-bottom: 10px;
+    } 
+
+    .contact {
+        width: 100%;
+        margin-bottom: 10px;
+    
+        
+    }
+    marquee {
+        width: 100%;
+    }
+}
+
+/* For devices with a width of 500px or less */
+@media (max-width: 500px) {
+    .Prenav {
+        padding-top: 5px;
+    }
+
+    .orders, .contact {
+        font-size: 14px;
+    }
+
+    marquee {
+        font-size: 12px;
+    }
+}
+
+/* For very small devices (less than 400px) */
+@media (max-width: 400px) {
+    .Prenav {
+        padding-top: 5px;
+        flex-direction: column;
+    }
+
+    .orders, .contact {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    marquee {
+        width: 100%;
+        font-size: 10px;
+    }
+}
 
 
 .logo{

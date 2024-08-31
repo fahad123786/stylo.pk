@@ -1,34 +1,19 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import {useSelector, useDispatch} from 'react-redux'
+import { increment, decrement } from '../redux/features/counter'
+
 
 const Counter = () => {
-    const navigate = useNavigate();
-    const [counter, setCounter] = useState(1)
-    const [show, setshow] = useState(true);
-    const add = () => {
-        if (counter < 3)
-            setCounter(counter + 1);
-        
-    }
+    const value = useSelector((state) => state.counter.value)
+    const dispatch = useDispatch();
 
-    const minus = () => {
-        if (counter > 1) {
-            setCounter(counter - 1);
-        }
-        else{
-            toast.warning("You cannot click less than 1")
-        }
-    }
-    
     return (
         <div style={{ fontSize: "30px", textAlign: "center" }}>
-            
-            
-            
-           <button className='btn btn-danger' onClick={minus}>-</button>
-            {counter}
-            <button className='btn btn-primary' onClick={add}>+</button>
+           <button className='btn btn-danger' onClick={()=>dispatch(decrement())}>-</button>
+            {value}
+            <button className='btn btn-primary' onClick={()=>dispatch(increment())}>+</button>
         </div>
     )
 }

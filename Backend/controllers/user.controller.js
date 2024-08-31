@@ -1,8 +1,9 @@
 const User = require("../models/user.model")
+var jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs")
 const Salt = 10;
 
-exports.store = async(req,res) =>{
+exports.register = async(req,res) =>{
     try{
         const {password} = req.body;
         const encryptedPassword = await bcrypt.hash(password,Salt);
@@ -20,18 +21,19 @@ exports.login = async(req,res) =>{
     try{
         const {email,password} = req.body;
         const user = await User.findOne({email:email})
-        if(user){
-            const comparePassword = await bcrypt.compare(password,user.password)
+        if(!user){
+            return res.json({message:"User not found", status:404,success:false});
+        }
+        const comparePassword = await bcrypt.compare(password,user.password)
         if(comparePassword){
-            return res.json({message:"User logged in Successfully"});
+            var token = jwt.sign({ id:user._id }, 'abc12345');
+            return res.json({message:"User logged in Successfully",status:200,success:true,token:token});
         }
         else{
-            return res.json({message:"Wrong Credential"});
+            return res.json({message:"Password not true",status:404, success:false});
         }
         }
-        res.json({status:200,message:"User created successfully",user})
         
-    }
     catch(err){
         console.log(err);
     }

@@ -4,6 +4,7 @@ import Select from 'react-select';
 import countryList from 'react-select-country-list';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
+import axios from "axios";
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -31,12 +32,13 @@ const Signup = () => {
         setFormData({ ...formData, country: selectedOption.label });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             toast.error("Password does not Match");
         } else {
-            console.log(formData);
+            const response = await axios.post("http://localhost:8082/api/admin/user/register", formData); 
+            console.log(response);
             toast.success("User Registration Successfully");
             navigate("/");
         }
