@@ -5,6 +5,7 @@ import countryList from 'react-select-country-list';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -100,8 +101,17 @@ const Signup = () => {
                 </div>
                 
                 <button type='submit' className='btn btn-success my-3'>Register</button>
+
+                <div>
+                Already have account? <Link to ="/login" className="alreadyaccount" >Login</Link>
             </div>
+            </div>
+
+          
         </form>
+
+            
+
     );
 }
 

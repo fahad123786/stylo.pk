@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -41,7 +42,8 @@ const Login = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-                 <div className='d-flex justify-content-center flex-column align-items-center' style ={{fontSize:"18px"}}>
+              <div className='d-flex justify-content-center flex-column align-items-center' style ={{fontSize:"18px"}}>
+
                 <label>Email</label>
                 <input type='text' name='email' value={email} onChange={onChange} required/>
                 
@@ -65,6 +67,7 @@ const Login = () => {
                 
                             
                 <button type='submit' className='btn btn-success my-3'>Login</button>
+                <div className='donthaveaccount'> Don't have Account? <Link to ="/signup" className='signup_button'> Signup</Link></div>
             </div>
         </form>
     );
