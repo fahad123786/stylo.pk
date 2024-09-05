@@ -64,14 +64,21 @@
 
   
 
-  .login_button{
+  .icons{
     display: flex;
-    justify-content: right !important;
+    flex-direction: row;
+    font-size: 2.3rem;
+    justify-content: right;
     margin-right: 1.5rem;
-    font-size: 2.5rem;
-    color: black;
-    margin-bottom: 1rem;
+    gap: 0.2rem;
   }
+
+  .home{
+    text-decoration: none !important;
+    color:#000 !important;
+   
+  }
+
 
   .signup_button{
     text-decoration: none;
@@ -81,4 +88,24 @@
     text-decoration: none;
   }
 
-  
+  .forgetpassword{
+    font-size: 1rem;
+    margin-right: 5rem;
+    margin-top: 0.5rem;
+  }
+
+  .loginformbutton, .registerformbutton{
+    background-color: rgb(238, 142, 158);
+    padding: 0.45rem 2.2rem 0.45rem 2.2rem;
+    margin: 0.8rem;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+
+  .loginformbutton:hover{
+    background-color: white;
+  }
+
+  .registerformbutton:hover{
+    background-color: white;
+  }

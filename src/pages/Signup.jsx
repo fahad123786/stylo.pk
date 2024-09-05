@@ -100,7 +100,7 @@ const Signup = () => {
                     </span>
                 </div>
                 
-                <button type='submit' className='btn btn-success my-3'>Register</button>
+                <button type='submit' className='registerformbutton'>Register</button>
 
                 <div>
                 Already have account? <Link to ="/login" className="alreadyaccount" >Login</Link>

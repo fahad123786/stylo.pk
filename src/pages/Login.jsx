@@ -65,8 +65,9 @@ const Login = () => {
                     </span>
                 </div>
                 
-                            
-                <button type='submit' className='btn btn-success my-3'>Login</button>
+                <div className='forgetpassword'>Forget Password?</div>            
+                <button type='submit' className='loginformbutton'>Login</button>
+                
                 <div className='donthaveaccount'> Don't have Account? <Link to ="/signup" className='signup_button'> Signup</Link></div>
             </div>
         </form>
