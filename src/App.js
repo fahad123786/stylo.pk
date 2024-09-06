@@ -18,7 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import ProductDescription from "./pages/ProductDescription";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
         transition={Zoom}
       />
 
-      
+    <Footer/>
 
     </>
   );
