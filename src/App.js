@@ -19,6 +19,7 @@ import ProductDescription from "./pages/ProductDescription";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
+import Dashboard from "./pages/Dashboard";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path= "/product/:id" element={<ProductDescription/>}/>
         <Route path ="/signup" element={<Signup/>}/>
         <Route path ="/login" element={<Login/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
 
        
       </Routes>
