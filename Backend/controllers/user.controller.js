@@ -51,21 +51,21 @@ exports.index = async (req,res)=>{
 }
 
 
-exports.get = async (req,res)=>{
-    try{
-        const {id} = req.params;
-
-        const user = await User.findOne({_id:id})
-        if(!user){
-            return res.json({status:404,success:false,message:`Couldn't find user`})
+exports.get = async (req, res) => {
+    try {
+        const { id } = req.params;
+        console.log(id);
+        const user = await User.findOne({ _id: id })
+        if (!user) {
+            return res.json({ status: 404, success: false, message: `User not found` })
         }
-        res.json({status:200,message:"User fetched successfully",user})
-
-}
-    catch(err){
+        res.json({ status: 200, success: true, message: "User found successfully", user })
+    }
+    catch (err) {
         console.log(err);
     }
-}
+};
+
 
 exports.destroy = async (req,res)=>{
     try{

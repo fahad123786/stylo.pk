@@ -239,7 +239,7 @@ marquee{
     margin-top: 2rem;
 }
 
-.imagehome{
+/* .imagehome{
     display: flex;
     margin-top: 2rem;
     height: 350px;
@@ -254,7 +254,7 @@ marquee{
     width: 400px;
     margin-top: 3rem;
     
-}
+} */
 
 /* HTML: <div class="loader"></div> */
 .loader {
@@ -294,6 +294,7 @@ marquee{
     width: 100%;
     gap: 2rem;
     padding: 0.5rem;
+    cursor: pointer;
     
   }
 
@@ -334,6 +335,7 @@ marquee{
 
 .firstline{
     margin: 2rem;
+    cursor: pointer;
 }
 
 .btnsubscribe{
@@ -349,3 +351,84 @@ marquee{
 .copyright{
     margin-top: 1rem;
 }
+
+
+
+
+
+
+
+
+
+
+.imagehome, .imagehome2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adds space between images */
+    margin: 0 auto; /* Centers the divs horizontally */
+    max-width: 100%;
+    height: auto;
+}
+
+.imagehome img, .imagehome2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    /* For large screens */
+    .imagehome {
+        width:80%;
+        height: auto;
+    }
+
+    .imagehome2 {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    /* For medium screens like tablets */
+    .imagehome {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+    }
+
+    .imagehome2 {
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 380px) {
+    /* For small to medium screens like larger smartphones */
+    .imagehome, .imagehome2 {
+        flex-direction: column; /* Stacks images vertically */
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .imagehome img, .imagehome2 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 380px) {
+    /* For very small screens like small smartphones */
+    .imagehome, .imagehome2 {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .imagehome img, .imagehome2 img {
+        width: 100%;
+        height: auto;
+    }
+}
+
