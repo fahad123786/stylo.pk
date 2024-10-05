@@ -7,6 +7,8 @@ router.post("/login",controller.login)
 router.get("/:id",controller.get)
 router.delete("/:id",controller.destroy)
 router.put("/:id",controller.update)
+router.post("/verifyUser",controller.verifyUser)
+
 
 module.exports = router;
 

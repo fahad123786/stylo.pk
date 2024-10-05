@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -16,8 +17,13 @@ const Home = () => {
       <img src ='https://stylo.pk/cdn/shop/products/P7088306_3_720x.jpg?v=1720683439'/>
       <img src ='https://stylo.pk/cdn/shop/files/PS470545-_2_c3d41c51-47d1-4871-813e-cc50e961b171_720x.jpg?v=1715251665'/>
       <img src ='https://stylo.pk/cdn/shop/files/CL157408_2_b6ca1782-6053-49b1-92e8-f864b3c7ec8d_720x.jpg?v=1720516839'/>
+      <img src='https://stylo.pk/cdn/shop/files/1920x600-shoes.jpg?v=1724158127&width=1300'/>
+      {/* <img src = 'https://stylo.pk/cdn/shop/files/1920x600-Bags.jpg?v=1724158127&width=1920'/> */}
       </div>
 
+        <div className='home-text'> <h2>Trendy Shoes for Fashionistas </h2>
+        <button > <Link to = "women-shoes">View All </Link> </button>
+        </div>
     </div>
   )
 }

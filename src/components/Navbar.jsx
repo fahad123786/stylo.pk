@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
+
 const Navbar = () => {
+  
+   
   return (
     <div>
+      
+
       <ul className='navbar'>
         <li style={{color:"red"}}><Link className='link' to ={"/"}> Sale </Link>  </li>
         <li> <Link className='link' to ={"/eid-collection"}>Eid || collection</Link></li>

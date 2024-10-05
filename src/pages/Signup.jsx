@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; 
 import axios from "axios";
 import { Link } from 'react-router-dom';
-
+import { FaFacebook } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc"; 
 const Signup = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -41,7 +42,7 @@ const Signup = () => {
             const response = await axios.post("http://localhost:8082/api/admin/user/register", formData); 
             console.log(response);
             toast.success("User Registration Successfully");
-            navigate("/");
+            navigate("/login");
         }
     };
 
@@ -54,7 +55,14 @@ const Signup = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+
+        
+             
+       
+        <form onSubmit={handleSubmit} className='signupform'>
+
+            <div className="signup-text"><h2>Sign up</h2></div>
+
             <div className='d-flex justify-content-center flex-column align-items-center' style ={{fontSize:"18px"}}>
                 <label>Name</label>
                 <input type='text' name='name' value={name} onChange={onChange} required />
@@ -64,13 +72,16 @@ const Signup = () => {
                 
                 <label>Phone</label>
                 <input type='number' name='phone' value={phone} onChange={onChange} required/>
-                
-                <label>Country</label>
+                <div className='country'>
+                <label className='country-text'> Country</label>
                 <Select 
                     options={options} 
                     value={options.find(option => option.label === country)} 
                     onChange={handleSelectChange} required 
+                    
                 />
+                </div>
+                
                 
                 <label>Password</label>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -105,14 +116,14 @@ const Signup = () => {
                 <div>
                 Already have account? <Link to ="/login" className="alreadyaccount" >Login</Link>
             </div>
+            <div className="continue">Continue with <div className='fb'> <FaFacebook /> <FcGoogle /> </div> </div>
             </div>
 
           
         </form>
 
             
-
-    );
+          );
 }
 
 export default Signup;

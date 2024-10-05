@@ -44,7 +44,10 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <>      
+          <div className='loginpage'><h2>Please enter your email and password</h2></div>
+        <form onSubmit={handleSubmit} className='formlogin'>
+                    <div className='login-text'><h2>Login</h2></div>
             <div className='d-flex justify-content-center flex-column align-items-center' style={{ fontSize: "18px" }}>
                 <label>Email</label>
                 <input type='text' name='email' value={email} onChange={onChange} required />
@@ -70,6 +73,8 @@ const Login = () => {
                 <div className='donthaveaccount'> Don't have Account? <Link to="/signup" className='signup_button'> Signup</Link></div>
             </div>
         </form>
+        </>
+
     );
 }
 

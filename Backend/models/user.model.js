@@ -7,6 +7,8 @@ const userSchema = mongoose.Schema({
     password:{type:String,required:true},
     country:{type:String},
     phone:{type:String},
+    code:{type:String},
+    isEmailVerified:{type:Boolean,default:false}
     
     }
 )

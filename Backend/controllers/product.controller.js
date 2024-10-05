@@ -13,11 +13,15 @@ exports.store = async(req,res) =>{
 
 exports.index = async (req,res)=>{
     try{
-        const {category} = req.query;
+        const {category,search} = req.query;
         const query={};
         if(category){
             query.category = category;
         }
+        if(search){
+            query.title = search;
+        }
+        
 
         const products = await Product.find(query)
         res.json({status:200,message:"Product fetched successfully", products})

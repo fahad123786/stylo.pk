@@ -137,6 +137,8 @@ marquee{
 
 
 
+
+
 /* Base Navbar Styles */
 .navbar {
     display: flex;
@@ -147,11 +149,69 @@ marquee{
     font-weight: bold;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    margin-top: 1.4rem;
 }
 
 .navbar li {
     list-style-type: none;
 }
+
+
+
+
+.input1{
+    width: 31rem;
+    height: 43px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-color: rgb(6, 6, 83);
+    border: 1.5px solid;
+    font-size: 16px;
+    padding-left: 13px;
+   
+}
+
+.nav-search{
+    display: flex;
+    width:70%;
+    margin-left: 24rem;
+    margin-top: 1rem;
+}
+
+.search{
+    font-size: 18.5px;
+    background-color: #e6007e;
+    padding:8px;
+    color: white;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 43px;
+}
+
+.logoandicon{
+    display: flex;
+
+}
+
+
+
+.form1{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input2{
+    width:23rem;
+    height: 2.6rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+
 
 /* Tablet Screens (768px and above) */
 @media screen and (max-width: 1024px) {
@@ -159,6 +219,8 @@ marquee{
         font-size: 18px;
         gap: 10px;
     }
+
+
 }
 
 /* Mobile Screens (480px and above) */

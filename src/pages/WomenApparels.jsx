@@ -2,48 +2,90 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Loader from '../components/Loader';
+
 const WomenApparels = () => {
   const [products, setProducts] = useState([]);
   const [loader, setLoader] = useState(false);
+
+  // Fetch products on initial load
   const fetchData = async () => {
-    setLoader(true)
-    const response = await axios.get("http://localhost:8082/api/admin/product?category=womenapparels");
-    setProducts(response.data.products);
-    console.log(response)
+    setLoader(true);
+    try {
+      const response = await axios.get("http://localhost:8082/api/admin/product?category=womenapparels");
+      setProducts(response.data.products);
+      console.log(response);
+    } catch (error) {
+      console.error('Error fetching women apparels products', error);
+    }
     setLoader(false);
+  };
+
+  const [search, setSearch] = useState({ title: "" });
+
+  const onChange = (e) => {
+    setSearch({ ...search, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const { title } = search;
+    try {
+      const response = await axios.get(`http://localhost:8082/api/admin/product?search=${title}`);
+      setProducts(response.data.products);
+    } catch (error) {
+      console.error('Error searching products', error);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  const { title } = search;
+
   return (
     <>
-      {
-        loader ? <Loader /> : (<div className='d-flex flex-wrap justify-content-evenly gap-4'>
-          {
-            products.map((product) => {
-              return(
-            <Link to={`/product/${product._id}`}>
-              <div class="card" style={{ width: "22rem" }}>
-                <img src={product.thumbnail} class="card-img-top" style={{height: "200px", width: "220px", marginLeft:'4.1rem'}} alt={product.title} />
-                <div class="card-body">
-                  <h5 class="card-title">{product.title}</h5>
-                  <p class="card-text">{product.description.slice(0, 25) + "..."}</p>
+      {loader ? (
+        <Loader />
+      ) : (
+        <div className='d-flex flex-wrap justify-content-evenly gap-4'>
+          {/* Search Form */}
+          <form onSubmit={onSubmit} className='form1'>
+            <input
+              className='input2'
+              type='text'
+              name='title'
+              value={title}
+              onChange={onChange}
+              placeholder='Search products'
+            />
+            <button type='submit' className='btn btn-primary'>
+              Search
+            </button>
+          </form>
+
+          {/* Product List */}
+          {products.map((product) => (
+            <Link to={`/product/${product._id}`} key={product._id}>
+              <div className="card" style={{ width: "22rem" }}>
+                <img
+                  src={product.thumbnail}
+                  className="card-img-top"
+                  style={{ height: "200px", width: "220px", marginLeft: '4.1rem' }}
+                  alt={product.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{product.title}</h5>
+                  <p className="card-text">{product.description.slice(0, 25) + "..."}</p>
                   <button className="btn btn-primary">${product.price}</button>
-                  
-                  
                 </div>
               </div>
             </Link>
-          )
-        })
-      }
-        </div>)
-      }
+          ))}
+        </div>
+      )}
     </>
-
   );
 };
 
-export default WomenApparels
+export default WomenApparels;
