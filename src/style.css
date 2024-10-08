@@ -411,7 +411,11 @@ marquee{
 }
 
 .copyright{
-    margin-top: 1rem;
+    display: flex;
+    position: absolute;
+    margin-top: 27rem;
+    margin-left: 1rem;
+    
 }
 
 

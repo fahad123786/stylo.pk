@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel'
-import { Link } from 'react-router-dom'
+
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
       </div>
 
         <div className='home-text'> <h2>Trendy Shoes for Fashionistas </h2>
-        <button > <Link to = "women-shoes">View All </Link> </button>
+        <button onClick={()=>{window.location.href = "/women-shoes"}} className='btn btn-primary' >View All  </button>
         </div>
     </div>
   )

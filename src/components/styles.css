@@ -200,3 +200,13 @@
   margin: 10px;
   
 }
+
+.dashboardbutton{
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+.inputsubscribe{
+  width: 13rem;
+}

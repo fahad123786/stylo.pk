@@ -20,6 +20,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
+import CartIcon from "./pages/CartIcon";
 
 
 
@@ -41,6 +42,7 @@ function App() {
         <Route path ="/signup" element={<Signup/>}/>
         <Route path ="/login" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/carticon" element={<CartIcon/>}/>
       
        
       </Routes>
